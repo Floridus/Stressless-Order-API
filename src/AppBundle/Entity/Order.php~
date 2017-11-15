@@ -1,0 +1,71 @@
+<?php
+
+namespace AppBundle\Entity;
+
+/**
+ * Order
+ */
+class Order {
+
+    /**
+     * @var integer
+     */
+    private $id;
+    
+    /**
+     * @var \AppBundle\Entity\Customer
+     */
+    private $customer;
+    
+    /**
+     * @var \AppBundle\Entity\Product
+     */
+    private $product;
+    
+    /**
+     * @var datetime
+     */
+    private $orderTime;
+    
+    /**
+     * @var text
+     */
+    private $notice;
+    
+    /**
+     * @var integer
+     */
+    private $amount;
+    
+    /**
+     * @var string
+     */
+    private $browser;
+    
+    /**
+     * @var string
+     */
+    private $operatingSystem;
+    
+    /**
+     * @var boolean
+     */
+    private $isOrdered;
+    
+    /**
+     * @var boolean
+     */
+    private $isCanceled;
+    
+    /**
+     * @var boolean
+     */
+    private $isReady;
+
+    public function __construct() {
+        $this->orderTime = new \DateTime();
+        $this->isOrdered = false;
+        $this->isCanceled = false;
+        $this->isReady = false;
+    }
+}

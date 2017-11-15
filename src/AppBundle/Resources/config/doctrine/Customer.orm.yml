@@ -1,0 +1,28 @@
+AppBundle\Entity\Customer:
+    type: entity
+    repositoryClass: AppBundle\Repository\CustomerRepository
+    table: app_customer
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    manyToOne:
+        table:
+            targetEntity: Table
+    fields:
+        token:
+            type: string
+            length: 32
+        isEnabled:
+            type: boolean
+            column: is_enabled
+        createdAt:
+            type: datetime
+            column: created_at
+        closedAt:
+            type: datetime
+            column: closed_at
+            nullable: true
+    lifecycleCallbacks: {  }

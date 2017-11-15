@@ -1,0 +1,42 @@
+AppBundle\Entity\Order:
+    type: entity
+    repositoryClass: AppBundle\Repository\OrderRepository
+    table: app_order
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    manyToOne:
+        customer:
+            targetEntity: Customer
+        product:
+            targetEntity: Product
+    fields:
+        orderTime:
+            type: datetime
+            column: order_time
+        notice:
+            type: text
+        amount:
+            type: smallint
+            options:
+                unsigned: true
+        browser:
+            type: string
+            length: 255
+        operatingSystem:
+            type: string
+            length: 255
+            column: operating_system
+        isOrdered:
+            type: boolean
+            column: is_ordered
+        isCanceled:
+            type: boolean
+            column: is_canceled
+        isReady:
+            type: boolean
+            column: is_ready
+    lifecycleCallbacks: {  }

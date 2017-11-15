@@ -1,0 +1,20 @@
+AppBundle\Entity\Table:
+    type: entity
+    repositoryClass: AppBundle\Repository\TableRepository
+    table: app_table
+    id:
+        id:
+            type: smallint
+            id: true
+            options:
+                unsigned: true
+            generator:
+                strategy: NONE
+    fields:
+        isOpen:
+            type: boolean
+            column: is_open
+        isEnabled:
+            type: boolean
+            column: is_enabled
+    lifecycleCallbacks: {  }

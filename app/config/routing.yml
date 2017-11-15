@@ -1,0 +1,40 @@
+app:
+    resource: "@AppBundle/Controller/"
+    type:     annotation
+
+admin:
+    path:     /admin
+    defaults: { _controller: AppBundle:Admin:index }
+    methods:  [GET]
+    
+generateCustomer:
+    path:     /admin/generateCustomer/{id}
+    defaults: { _controller: AppBundle:Admin:generateCustomer }
+    methods:  [GET]
+    requirements:
+        id: \d+
+        
+apiCheckLogin:
+    path:     /api/checkLogin
+    defaults: { _controller: AppBundle:Api:checkLogin }
+    methods:  [GET, POST]
+    
+apiGetCategories:
+    path:     /api/getCategories
+    defaults: { _controller: AppBundle:Api:getCategories }
+    methods:  [GET, POST]
+    
+apiGetProducts:
+    path:     /api/getProducts
+    defaults: { _controller: AppBundle:Api:getProducts }
+    methods:  [GET, POST]
+    
+apiGetOrders:
+    path:     /api/getOrders
+    defaults: { _controller: AppBundle:Api:getOrders }
+    methods:  [GET, POST]
+    
+apiBuyProduct:
+    path:     /api/buyProduct
+    defaults: { _controller: AppBundle:Api:buyProduct }
+    methods:  [GET, POST]

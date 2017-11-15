@@ -1,0 +1,11 @@
+AppBundle\Entity\Category:
+    constraints:
+        - Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity: name
+        - Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity: 
+            - parent
+            - ordering
+    properties:
+        ordering:
+            - NotBlank: ~
+        name:
+            - NotBlank: ~

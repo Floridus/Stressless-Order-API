@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}{{ appName }}{% endblock %}</title>
+        
+        {% block stylesheets %}
+        {% stylesheets filter="cssrewrite" output="css/compiled.css"
+            "css/normalize.css"
+            "css/semantic.min.css"
+            "css/main.css"
+        %}
+        <link rel="stylesheet" href="{{ asset_url }}" />
+        {% endstylesheets %}
+        {% endblock stylesheets %}
+        
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    </head>
+    <body>
+        {% block body %}{% endblock %}
+        
+        {% block javascripts %}
+        {% javascripts
+            "js/vendor/jquery-3.1.0.min.js"
+            "js/vendor/semantic.min.js"
+        %}
+        <script src="{{ asset_url }}" type="text/javascript"></script>
+        {% endjavascripts %}
+        {% endblock javascripts %}
+    </body>
+</html>

@@ -1,0 +1,30 @@
+<?php
+
+namespace AppBundle\Entity;
+
+/**
+ * Table
+ */
+class Table {
+
+    /**
+     * @var integer
+     */
+    private $id;
+
+    /**
+     * @var boolean
+     */
+    private $isOpen;
+
+    /**
+     * @var boolean
+     */
+    private $isEnabled;
+
+    public function __construct() {
+        $this->isOpen = true;
+        $this->isEnabled = true;
+    }
+
+}

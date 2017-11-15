@@ -1,0 +1,34 @@
+AppBundle\Entity\Product:
+    type: entity
+    repositoryClass: AppBundle\Repository\ProductRepository
+    table: app_product
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    manyToOne:
+        category:
+            targetEntity: Category
+            inversedBy: products
+    fields:
+        name:
+            type: string
+            length: 255
+            unique: true
+        description:
+            type: text
+        price:
+            type: decimal
+            precision: 9
+            scale: 2
+        ordering:
+            type: smallint
+            unique: true
+            options:
+                unsigned: true
+        isEnabled:
+            type: boolean
+            column: is_enabled
+    lifecycleCallbacks: {  }

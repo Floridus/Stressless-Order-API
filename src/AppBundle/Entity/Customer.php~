@@ -1,0 +1,45 @@
+<?php
+
+namespace AppBundle\Entity;
+
+/**
+ * Custommer
+ */
+class Customer {
+
+    /**
+     * @var integer
+     */
+    private $id;
+    
+    /**
+     * @var \AppBundle\Entity\Table
+     */
+    private $table;
+    
+    /**
+     * @var string
+     */
+    private $token;
+    
+    /**
+     * @var boolean
+     */
+    private $isEnabled;
+
+    /**
+     * @var boolean
+     */
+    private $createdAt;
+
+    /**
+     * @var boolean
+     */
+    private $closedAt;
+
+    public function __construct() {
+        $this->createdAt = new \DateTime();
+        $this->isEnabled = true;
+    }
+
+}
